@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from './context/themeContext';
-
+import ThemeProvider from './context/themeProvider';
+import LocalizationProvider from "./context/localizationProvider";
 
 ReactDOM.render(
-  <ThemeProvider>
-    <React.StrictMode>
-    <App />
-    </React.StrictMode>
-  </ThemeProvider>,
+  <LocalizationProvider>
+    <ThemeProvider>
+      <React.StrictMode>
+      <App />
+      </React.StrictMode>
+    </ThemeProvider>
+  </LocalizationProvider>,
   document.getElementById('root')
 
 );
